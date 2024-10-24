@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typing Animation</title>
+    <style>
+        .typing {
+            width: 27ch; /* Controls the width for the typing animation */
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #7E2EA0; /* Blinking cursor effect */
+            animation: typing 3s steps(27, end), cursor 0.5s step-end forwards 2s ; /* Typing and cursor animations */
+        }
+
+        .typing2 {
+            width: 50ch; /* Controls the width for the typing animation */
+            white-space: nowrap;
+            overflow: hidden;
+            border-right: 2px solid #7E2EA0; /* Blinking cursor effect */
+            animation: typing2 3s steps(18, end) 3s forwards, cursor 0.5s step-end 3s; /* Delay typing animation by 3s */
+            visibility: hidden; /* Hide before the animation starts */
+        }
+       
+        @keyframes typing {
+            from { width: 0; }
+            to { width: 27ch; } /* Width matching the number of characters */
+        }
+
+        @keyframes typing2 {
+            from { width: 0; visibility: visible; }
+            to { width: 18ch; visibility: visible; } /* Width matching the number of characters */
+        }
+
+        @keyframes cursor {
+            100% { border-color: transparent; }
+        }
+
+        body {
+            background-color: bisque;
+        }
+    </style>
+</head>
+<body>
+    <div class="typing">Bienvenu chez notre web site Saa</div>
+    <div class="typing2">et soyez le bienvenu</div>
+
+    <!-- No additional JavaScript needed for the typing effect -->
+</body>
+</html>
